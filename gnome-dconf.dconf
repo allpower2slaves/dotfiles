@@ -1,0 +1,71 @@
+[org/gnome/desktop/input-sources]
+current=uint32 0
+mru-sources=[('xkb', 'us'), ('xkb', 'ru')]
+sources=[('xkb', 'us'), ('xkb', 'ru')]
+xkb-options=['caps:none']
+
+[org/gnome/desktop/interface]
+clock-format='24h'
+toolkit-accessibility=false
+
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+speed=0.2996
+
+[org/gnome/desktop/peripherals/touchpad]
+send-events='disabled'
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/privacy]
+report-technical-problems=false
+
+[org/gnome/desktop/wm/keybindings]
+switch-applications=@as []
+switch-windows=['<Alt>Tab']
+switch-windows-backward=['<Shift><Alt>Tab']
+
+[org/gnome/desktop/wm/preferences]
+focus-mode='click'
+resize-with-right-button=true
+
+[org/gnome/mutter]
+attach-modal-dialogs=false
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+default-sort-in-reverse-order=true
+default-sort-order='mtime'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gno
+me/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>e'
+command='nautilus'
+name='nautilus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Control><Alt>t'
+command='flatpak run org.kde.konsole'
+name='konsole'
+
+[org/gnome/shell/app-switcher]
+current-workspace-only=true
+
+[org/gnome/shell/extensions/caffeine]
+indicator-position-max=3
+show-notifications=false
+toggle-state=false
+user-enabled=false
+
+[org/gnome/shell/world-clocks]
+locations=@av []
+
+[org/gnome/system/location]
+enabled=false
+
+[org/gnome/tweaks]
+show-extensions-notice=false
