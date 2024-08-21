@@ -33,6 +33,10 @@ resize-with-right-button=true
 [org/gnome/mutter]
 attach-modal-dialogs=false
 
+[org/gnome/mutter]
+attach-modal-dialogs=false
+experimental-features=['scale-monitor-framebuffer']
+
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 default-sort-in-reverse-order=true
