@@ -21,8 +21,8 @@ report-technical-problems=false
 
 [org/gnome/desktop/wm/keybindings]
 switch-applications=@as []
-switch-to-workspace-left=['<Super>bracketleft']
-switch-to-workspace-right=['<Super>apostrophe']
+#switch-to-workspace-left=['<Super>bracketleft']
+#switch-to-workspace-right=['<Super>apostrophe']
 switch-windows=['<Alt>Tab']
 switch-windows-backward=['<Shift><Alt>Tab']
 
