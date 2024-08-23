@@ -30,6 +30,10 @@ switch-windows-backward=['<Shift><Alt>Tab']
 focus-mode='click'
 resize-with-right-button=true
 
+[org/gnome/desktop/media-handling]
+automount=false
+automount-open=false
+
 [org/gnome/mutter]
 attach-modal-dialogs=false
 
