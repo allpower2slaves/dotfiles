@@ -10,7 +10,7 @@ toolkit-accessibility=false
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
-speed=0.2996
+speed=0.38
 
 [org/gnome/desktop/peripherals/touchpad]
 send-events='disabled'
