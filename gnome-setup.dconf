@@ -23,8 +23,6 @@ report-technical-problems=false
 switch-applications=@as []
 #switch-to-workspace-left=['<Super>bracketleft']
 #switch-to-workspace-right=['<Super>apostrophe']
-switch-windows=['<Alt>Tab']
-switch-windows-backward=['<Shift><Alt>Tab']
 
 [org/gnome/desktop/wm/preferences]
 focus-mode='click'
@@ -58,7 +56,7 @@ command='flatpak run org.kde.konsole'
 name='konsole'
 
 [org/gnome/shell/app-switcher]
-current-workspace-only=true
+current-workspace-only=false
 
 [org/gnome/shell/extensions/caffeine]
 indicator-position-max=3
