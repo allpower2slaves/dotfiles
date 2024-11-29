@@ -67,14 +67,14 @@ call plug#begin()
 "call plug#begin('~/.config/nvim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
 "Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-Plug 'nvim-neo-tree/neo-tree.nvim'
-Plug 'MunifTanjim/nui.nvim'
+"Plug 'nvim-neo-tree/neo-tree.nvim'
+"Plug 'MunifTanjim/nui.nvim'
 "Plug 'nvim-tree/nvim-tree.lua'
 "Plug 'nvim-tree/nvim-web-devicons'
-Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-lua/plenary.nvim'
 "Plug 'preservim/nerdtree'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'mzlogin/vim-markdown-toc'
+"Plug 'mzlogin/vim-markdown-toc'
 "Plug 'vim-scripts/info.vim'
 "Plug 'smjonas/live-command.nvim'
 Plug 'samjwill/nvim-unception'
