@@ -56,9 +56,6 @@ current-workspace-only=false
 [org/gnome/shell/extensions/caffeine]
 show-notifications=false
 
-[org/gnome/shell/world-clocks]
-locations=@av []
-
 [org/gnome/system/location]
 enabled=false
 
