@@ -10,7 +10,7 @@ toolkit-accessibility=false
 
 [org/gnome/desktop/peripherals/mouse]
 accel-profile='flat'
-speed=0.38
+speed=0.6
 
 [org/gnome/desktop/peripherals/touchpad]
 send-events='disabled'
@@ -34,6 +34,10 @@ automount-open=false
 
 [org/gnome/mutter]
 attach-modal-dialogs=false
+
+[org/gnome/mutter]
+attach-modal-dialogs=false
+experimental-features=['scale-monitor-framebuffer']
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
