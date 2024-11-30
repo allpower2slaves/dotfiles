@@ -28,9 +28,6 @@ automount-open=false
 
 [org/gnome/mutter]
 attach-modal-dialogs=false
-
-[org/gnome/mutter]
-attach-modal-dialogs=false
 experimental-features=['scale-monitor-framebuffer']
 
 [org/gnome/nautilus/preferences]
