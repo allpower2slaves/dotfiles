@@ -15,11 +15,6 @@ two-finger-scrolling-enabled=true
 [org/gnome/desktop/privacy]
 report-technical-problems=false
 
-[org/gnome/desktop/wm/keybindings]
-#switch-applications=@as []
-#switch-to-workspace-left=['<Super>bracketleft']
-#switch-to-workspace-right=['<Super>apostrophe']
-
 [org/gnome/desktop/wm/preferences]
 focus-mode='click'
 resize-with-right-button=true
