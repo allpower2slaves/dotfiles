@@ -54,10 +54,7 @@ name='konsole'
 current-workspace-only=false
 
 [org/gnome/shell/extensions/caffeine]
-indicator-position-max=3
 show-notifications=false
-toggle-state=false
-user-enabled=false
 
 [org/gnome/shell/world-clocks]
 locations=@av []
