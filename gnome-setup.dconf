@@ -12,6 +12,9 @@ toolkit-accessibility=false
 send-events='disabled'
 two-finger-scrolling-enabled=true
 
+[org/gnome/desktop/peripherals/mouse]
+accel-profile='flat'
+
 [org/gnome/desktop/privacy]
 report-technical-problems=false
 
