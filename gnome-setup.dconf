@@ -28,7 +28,7 @@ automount-open=false
 
 [org/gnome/mutter]
 attach-modal-dialogs=false
-experimental-features=['scale-monitor-framebuffer']
+#experimental-features=['scale-monitor-framebuffer']
 
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
