@@ -64,21 +64,21 @@ call plug#begin()
 "   - Avoid using standard Vim directory names like 'plugin'
 "   Make sure you use single quot
 
-"call plug#begin('~/.config/nvim/plugged')
 Plug 'dhruvasagar/vim-table-mode'
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-"Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'samjwill/nvim-unception'
 "Plug 'MunifTanjim/nui.nvim'
-"Plug 'nvim-tree/nvim-tree.lua'
-"Plug 'nvim-tree/nvim-web-devicons'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'preservim/nerdtree'
 "Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 "Plug 'mzlogin/vim-markdown-toc'
-"Plug 'vim-scripts/info.vim'
+"Plug 'nvim-lua/plenary.nvim'
+"Plug 'nvim-neo-tree/neo-tree.nvim'
+"Plug 'nvim-tree/nvim-tree.lua'
+"Plug 'nvim-tree/nvim-web-devicons'
+"Plug 'preservim/nerdtree'
 "Plug 'smjonas/live-command.nvim'
-Plug 'samjwill/nvim-unception'
 "Plug 'ujihisa/tabpagecolorscheme' " individual color schemes for tabs
+"Plug 'vim-scripts/info.vim'
+"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+"call plug#begin('~/.config/nvim/plugged')
 call plug#end()
 
 "Tcolorscheme herzeleid " weird hack for tabpagecolorscheme
