@@ -4,6 +4,7 @@
 ln -isvn $(realpath ./mpv) ~/.config/mpv
 ln -isvn $(realpath ./nvim) ~/.config/nvim
 ln -isvn $(realpath ./fish) ~/.config/fish
+ln -isvn $(realpath ./ghostty) ~/.config/ghostty
 
 test ! -e ~/.local/share/nvim/site/autoload/plug.vim  && command -v nvim >/dev/null && \
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
