@@ -19,7 +19,7 @@ mouse-hide-while-typing = true
 
 copy-on-select = false
 clipboard-paste-protection = true
-
+keybind = shift+insert=paste_from_clipboard
 
 command = fish
 #initial-command = fish
@@ -38,4 +38,3 @@ gtk-tabs-location = hidden
 #adw-toolbar-style = flat # this thing makes it transparent...
 desktop-notifications = true
 fullscreen = false
-
