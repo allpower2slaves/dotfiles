@@ -35,3 +35,5 @@ gtk-tabs-location = hidden
 #adw-toolbar-style = flat # this thing makes it transparent...
 desktop-notifications = true
 fullscreen = false
+
+clipboard-paste-protection = true
