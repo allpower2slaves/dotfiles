@@ -1,5 +1,5 @@
 font-family = Source Code Pro
-font-style = Medium
+font-style = Semibold
 font-size = 11
 font-style-bold = false
 bold-is-bright = true
@@ -16,7 +16,10 @@ shell-integration-features = no-cursor
 
 cursor-click-to-move = true
 mouse-hide-while-typing = true
+
 copy-on-select = false
+clipboard-paste-protection = true
+
 
 command = fish
 #initial-command = fish
@@ -36,4 +39,3 @@ gtk-tabs-location = hidden
 desktop-notifications = true
 fullscreen = false
 
-clipboard-paste-protection = true
