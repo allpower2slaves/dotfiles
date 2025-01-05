@@ -12,9 +12,10 @@ endif
 runtime colors/vim.lua
 let g:colors_name = "herzeleid"
 
-
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE guifg=Yellow guibg=NONE
+
+highlight VertSplit ctermfg=237
 
 "highlight Cursor guifg=yellow guibg=black
 "highlight CursorLine guibg=NONE ctermbg=NONE
