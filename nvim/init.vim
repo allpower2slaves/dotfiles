@@ -9,6 +9,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o "
 set cursorline
 set cursorlineopt=number
 
+"terminal scollback
+set scrollback=20000
+
 "my colorscheme was moved to `./colors/herzeleid.vim`
 colorscheme herzeleid
 set notermguicolors "for nvim 0.10.0
