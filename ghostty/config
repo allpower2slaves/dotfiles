@@ -31,6 +31,7 @@ window-inherit-working-directory = false
 
 # might change the window background tbh
 gtk-adwaita = true
+adw-toolbar-style=flat
 #window-theme=ghostty
 #window-titlebar-background = black
 window-theme=dark
