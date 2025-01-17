@@ -33,21 +33,8 @@ default-sort-order='mtime'
 migrated-gtk-settings=true
 search-filter-time-type='last_modified'
 
-[org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
-
 [org/gnome/desktop/search-providers]
 disabled=['org.mozilla.firefox.desktop', 'org.gnome.Software.desktop']
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
-binding='<Super>e'
-command='nautilus'
-name='nautilus'
-
-[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
-binding='<Control><Alt>t'
-command='ghostty'
-name='ghostty'
 
 [org/gnome/shell/app-switcher]
 current-workspace-only=false
@@ -60,3 +47,48 @@ enabled=false
 
 [org/gnome/tweaks]
 show-extensions-notice=false
+
+# Custom shortcuts
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybi ndings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybind ings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindin gs/custom2/']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>e'
+command='nautilus'
+name='nautilus'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+binding='<Control><Alt>t'
+command='ghostty'
+name='ghostty'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+binding='<Control><Alt>y'
+command='ptyxis'
+name='ptyxis'
+
+
+# that second terminal (ptyxis)
+
+[org/gnome/Ptyxis]
+default-columns=uint32 60
+default-profile-uuid='20ebeed33373e7719c406cee675eaac9'
+default-rows=uint32 20
+font-name='Spleen 16x32 Bold 12'
+interface-style='dark'
+profile-uuids=['20ebeed33373e7719c406cee675eaac9']
+restore-session=false
+restore-window-size=false
+use-system-font=false
+window-size=(uint32 60, uint32 20)
+
+[org/gnome/Ptyxis/Profiles/20ebeed33373e7719c406cee675eaac9]
+bold-is-bright=false
+custom-command='fish'
+label='second-term'
+login-shell=false
+palette='solarized'
+use-custom-command=true
+
+[org/gnome/Ptyxis/Shortcuts]
+paste-clipboard='<Shift>p'

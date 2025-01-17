@@ -28,14 +28,19 @@ link-url = true
 
 working-directory = inherit
 window-inherit-working-directory = false
+window-height = 40
+window-width = 110
 
 # might change the window background tbh
 gtk-adwaita = true
-adw-toolbar-style=flat
+
+# if this thing is flat the headerbar will be fully transparent 
+adw-toolbar-style=raised-border
+
 #window-theme=ghostty
 #window-titlebar-background = black
-window-theme=dark
-gtk-tabs-location = hidden
+window-theme = dark
+gtk-tabs-location = top
 #adw-toolbar-style = flat # this thing makes it transparent...
 desktop-notifications = true
 fullscreen = false
