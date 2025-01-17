@@ -17,6 +17,8 @@ highlight CursorLineNr term=bold cterm=NONE ctermfg=Yellow ctermbg=NONE gui=NONE
 
 highlight VertSplit ctermfg=237
 
+hi Whitespace ctermfg=238
+
 "highlight Cursor guifg=yellow guibg=black
 "highlight CursorLine guibg=NONE ctermbg=NONE
 "hi StatusLine   ctermfg=226  guifg=#ffff00 ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
