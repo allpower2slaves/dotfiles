@@ -36,6 +36,7 @@ search-filter-time-type='last_modified'
 [org/gnome/desktop/search-providers]
 disabled=['org.mozilla.firefox.desktop', 'org.gnome.Software.desktop']
 
+# reset :)
 [org/gnome/shell/app-switcher]
 current-workspace-only=false
 
@@ -50,7 +51,7 @@ show-extensions-notice=false
 
 # Custom shortcuts
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybi ndings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybind ings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindin gs/custom2/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Super>e'
