@@ -53,39 +53,7 @@ autocmd FileType yaml setlocal list | setlocal lcs+=space:·
 autocmd FileType tex setlocal linebreak
 autocmd FileType markdown setlocal linebreak
 
-
-
 " Plugins
-
-call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-"   Make sure you use single quot
-
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'samjwill/nvim-unception'
-"Plug 'MunifTanjim/nui.nvim'
-"Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-"Plug 'mzlogin/vim-markdown-toc'
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-neo-tree/neo-tree.nvim'
-"Plug 'nvim-tree/nvim-tree.lua'
-"Plug 'nvim-tree/nvim-web-devicons'
-"Plug 'preservim/nerdtree'
-"Plug 'smjonas/live-command.nvim'
-"Plug 'ujihisa/tabpagecolorscheme' " individual color schemes for tabs
-"Plug 'vim-scripts/info.vim'
-"Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
-"call plug#begin('~/.config/nvim/plugged')
-call plug#end()
-
-"Tcolorscheme herzeleid " weird hack for tabpagecolorscheme
-
 let g:table_mode_corner='|'
 let g:unception_block_while_host_edits=1
 let g:livepreview_engine = 'xelatex' . ' [--interaction=nonstopmode] '
