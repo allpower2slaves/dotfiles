@@ -28,7 +28,7 @@ link-url = true
 
 # why 42? because tab bar will eat those 2 lines :)
 working-directory = inherit
-window-inherit-working-directory = false
+window-inherit-working-directory = true
 window-height = 42
 window-width = 110
 
