@@ -1,9 +1,18 @@
 #!/bin/sh
 # i didnt test it on anything posix. it should work with gnu coreutils
 
-ln -isvn $(realpath ./mpv) ~/.config/mpv
-ln -isvn $(realpath ./nvim) ~/.config/nvim
-ln -isvn $(realpath ./fish) ~/.config/fish
-ln -isvn $(realpath ./ghostty) ~/.config/ghostty
+classic_dirs="mpv nvim fish ghostty" # list of 
+xdg_config="~/.config" # because this thing will be ran on BSD and other unixes
 
-test ! -e ~/.zshrc && ln -iv $(realpath ./zsh/zshrc) ~/.zshrc 2>/dev/null
+# ~/.config/ creation
+test -d $xdg_config || mkdir -p $xdg_config
+
+# classic dir linking TODO: maybe fix filenames with space? (i mean i just copy configs lol)
+printf "$classic_dirs\n" | tr ' ' '\n' | while read directory; do
+	target="$xdg_config/$directory"
+	printf "$target\n" #debug
+	ln -sv $(realpath $directory) $target 
+done
+
+# zsh 
+ln -s $(realpath ./zsh/zshrc) ~/.zshrc
