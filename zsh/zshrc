@@ -1,0 +1,38 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=20000
+# End of lines configured by zsh-newuser-install
+
+autoload -Uz compinit promptinit
+compinit
+promptinit
+
+#source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=gray'
+#ZSH_AUTOSUGGEST_STRATEGY=(history)
+
+autoload -U history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^[[A" history-beginning-search-backward-end
+bindkey "^[[B" history-beginning-search-forward-end
+
+autoload edit-command-line; zle -N edit-command-line
+bindkey "^[e" edit-command-line
+
+autoload -Uz vcs_info
+precmd() {vcs_info}
+zstyle ':vcs_info:git:*' formats ' (%b)'
+setopt PROMPT_SUBST
+git_branch_prompt=
+
+PS1='%n@%m %~${vcs_info_msg_0_} %# '
+
+setopt AUTO_PUSHD                  # pushes the old directory onto the stack
+setopt PUSHD_MINUS                 # exchange the meanings of '+' and '-'
+setopt CDABLE_VARS                 # expand the expression (allows 'cd -2/tmp')
+zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12' 
+
+unset _comps[git add]

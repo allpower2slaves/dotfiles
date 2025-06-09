@@ -21,7 +21,7 @@ copy-on-select = false
 clipboard-paste-protection = true
 keybind = shift+insert=paste_from_clipboard
 
-command = fish
+command = zsh
 #initial-command = fish
 
 link-url = true
