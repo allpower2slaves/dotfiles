@@ -2,7 +2,7 @@
 # i didnt test it on anything posix. it should work with gnu coreutils
 
 classic_dirs="mpv nvim fish ghostty" # list of 
-xdg_config="~/.config" # because this thing will be ran on BSD and other unixes
+xdg_config="$HOME/.config" # because this thing will be ran on BSD and other unixes
 
 # ~/.config/ creation
 test -d $xdg_config || mkdir -p $xdg_config
@@ -15,4 +15,4 @@ printf "$classic_dirs\n" | tr ' ' '\n' | while read directory; do
 done
 
 # zsh 
-ln -s $(realpath ./zsh/zshrc) ~/.zshrc
+ln -s $(realpath ./zsh/zshrc) $HOME/zshrc
