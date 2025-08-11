@@ -29,6 +29,9 @@ hi MatchParen cterm=none ctermbg=172 ctermfg=0
 hi StatusLine   ctermfg=Yellow guifg=Yellow ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
 hi StatusLineNC ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
 
+hi StatusLineTerm   ctermfg=Yellow guifg=Yellow ctermbg=239 guibg=#4e4e4e cterm=bold gui=bold
+hi StatusLineNCTerm ctermfg=249 guifg=#b2b2b2 ctermbg=237 guibg=#3a3a3a cterm=none gui=none
+
 " hi TabLineFill ctermfg=239 ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
 hi TabLineFill ctermfg=237 ctermbg=Black guifg=#4e4e4e guibg=#4e4e4e gui=none
 hi TabLineSel ctermfg=Yellow ctermbg=239
