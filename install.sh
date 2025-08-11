@@ -11,8 +11,8 @@ test -d $xdg_config || mkdir -p $xdg_config
 printf "$classic_dirs\n" | tr ' ' '\n' | while read directory; do
 	target="$xdg_config/$directory"
 	printf "$target\n" #debug
-	ln -sv $(realpath $directory) $target 
+	ln -svif $(realpath $directory) $target 
 done
 
 # zsh 
-ln -s $(realpath ./zsh/zshrc) $HOME/zshrc
+ln -svif $(realpath ./zsh/zshrc) $HOME/.zshrc
