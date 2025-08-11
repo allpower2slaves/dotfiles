@@ -4,6 +4,8 @@ HISTSIZE=1000
 SAVEHIST=20000
 # End of lines configured by zsh-newuser-install
 
+setopt incappendhistory
+
 VISUAL=nvim
 EDITOR=$VISUAL
 
