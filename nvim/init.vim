@@ -14,7 +14,7 @@ set scrollback=20000
 
 "my colorscheme was moved to `./colors/herzeleid.vim`
 colorscheme herzeleid
-set notermguicolors "for nvim 0.10.0
+set termguicolors
 
 
 autocmd TermOpen * setlocal nonumber norelativenumber
