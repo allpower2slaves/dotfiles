@@ -16,6 +16,7 @@ set scrollback=20000
 colorscheme herzeleid
 set termguicolors
 
+" terminal settings
 autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd TermOpen * map <A-e> a<A-e>
 "tnoremap <F2> <C-\><C-n>
