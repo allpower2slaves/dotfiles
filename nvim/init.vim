@@ -36,9 +36,14 @@ augroup numbertoggle
 augroup END
 
 " format-dependent stuff
-autocmd FileType yaml setlocal list | setlocal lcs+=space:·
+autocmd FileType yaml setlocal list | setlocal lcs+=space:· | setlocal nowrap
 autocmd FileType tex setlocal linebreak
 autocmd FileType markdown setlocal linebreak
+autocmd FileType fstab setlocal list | setlocal nowrap
+
+" wrapping
+set sidescroll=5
+set listchars+=precedes:<,extends:>
 
 " Plugins
 let g:table_mode_corner='|'
