@@ -25,7 +25,6 @@ autocmd TermOpen * map <A-e> a<A-e>
 
 " Aliases
 command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
-command Fish terminal fish
 
 " Numbers
 set number
