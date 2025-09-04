@@ -17,4 +17,4 @@ done
 # zsh 
 ln -svif $(realpath ./zsh/zshrc) $HOME/.zshrc
 
-cp startwl ~/bin/startwl # TODO: if on linux, use `~/.local/bin`
+ln -svif $(realpath startwl) ~/.local/bin/startwl || ln -svif $(realpath startwl) ~/bin/startl
