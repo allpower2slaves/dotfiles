@@ -1,0 +1,10 @@
+#!/bin/sh
+export XDG_CURRENT_DESKTOP=sway
+export XDG_SESSION_TYPE=wayland
+export DWL_WALLPAPER="$HOME/Pictures/F33_wallpaper_night.jpg"
+
+(/usr/local/libexec/xdg-desktop-portal-wlr || /usr/libexec/xdg-desktop-portal-wlr) &
+pipewire &
+
+exec dbus-launch --exit-with-session \
+	dwl -s "dwlb" &

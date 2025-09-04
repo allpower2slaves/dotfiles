@@ -1,0 +1,2 @@
+wallpaper="$HOME/Pictures/F33_wallpaper_night.jpg"
+swaybg -i "$wallpaper"

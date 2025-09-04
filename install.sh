@@ -1,7 +1,7 @@
 #!/bin/sh
 # i didnt test it on anything posix. it should work with gnu coreutils
 
-classic_dirs="mpv nvim fish ghostty" # list of 
+classic_dirs="mpv nvim fish ghostty wayland" # list of 
 xdg_config="$HOME/.config" # because this thing will be ran on BSD and other unixes
 
 # ~/.config/ creation
@@ -16,3 +16,5 @@ done
 
 # zsh 
 ln -svif $(realpath ./zsh/zshrc) $HOME/.zshrc
+
+cp startwl ~/bin/startwl # TODO: if on linux, use `~/.local/bin`
