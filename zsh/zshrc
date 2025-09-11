@@ -9,6 +9,9 @@ setopt incappendhistory
 VISUAL=nvim
 EDITOR=$VISUAL
 
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # for OpenSUSE
+PATH=$PATH:$HOME/.local/bin # for FreeBSD
+
 autoload -Uz compinit promptinit
 compinit
 promptinit
