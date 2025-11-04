@@ -75,3 +75,6 @@ setopt AUTO_PUSHD                  # pushes the old directory onto the stack
 setopt PUSHD_MINUS                 # exchange the meanings of '+' and '-'
 unsetopt CDABLE_VARS                 # expand the expression (allows 'cd -2/tmp')
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12' 
+
+# doas alias
+command -pv doas 1>/dev/null || alias doas="sudo"
