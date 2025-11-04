@@ -7,15 +7,7 @@ promptinit
 setopt menu_complete
 zstyle ':completion:*' menu select
 __comp_options+=(globdots)
-
-__menu_accept_line(){
-	zle .menu-complete
-	zle accept-line
-}
-zle -N __menu_accept_line
-
 zmodload -i zsh/complist
-bindkey -M menuselect '^M' __menu_accept_line
 
 #zstyle ':completion:*' file-sort modification
 
