@@ -1,0 +1,11 @@
+set novisualbell
+set noerrorbells
+set cedit=''
+set filec='^V'
+
+set shiftwidth=4
+set tabstop=4
+
+set ruler
+set iclower
+set showmatch
