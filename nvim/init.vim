@@ -21,7 +21,7 @@ autocmd TermOpen * setlocal nonumber norelativenumber
 autocmd TermOpen * map <A-e> a<A-e>
 "tnoremap <F2> <C-\><C-n>
 ":tnoremap <C-w> <C-\><C-n><C-w>
-:tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 " Aliases
 command Date1 read !date '+\%d \%B \%Y, \%A, Week \%W'
