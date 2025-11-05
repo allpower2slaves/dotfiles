@@ -1,5 +1,5 @@
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
-set ignorecase
+set ignorecase smartcase
 set numberwidth=1
 set mouse =
 "set autochdir
