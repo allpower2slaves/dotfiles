@@ -34,6 +34,12 @@ augroup numbertoggle
   autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
 
+"tab stuff
+set tabstop=4
+set autoindent
+set smartindent
+set smarttab
+
 " format-dependent stuff
 autocmd FileType yaml setlocal list | setlocal lcs+=space:· | setlocal nowrap
 autocmd FileType tex setlocal linebreak
