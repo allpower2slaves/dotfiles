@@ -45,6 +45,7 @@ autocmd FileType yaml setlocal list | setlocal lcs+=space:· | setlocal nowrap
 autocmd FileType tex setlocal linebreak
 autocmd FileType markdown setlocal linebreak
 autocmd FileType fstab setlocal list | setlocal nowrap
+autocmd FileType yaml,json setlocal expandtab shiftwidth=2 tabstop=2
 
 " wrapping
 set sidescroll=5
