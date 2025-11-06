@@ -1,4 +1,4 @@
-if [! -S "$SSH_AUTH_SOCK" ]; then
+if [ ! -S "$SSH_AUTH_SOCK" ]; then
     eval "$(ssh-agent -s)" >/dev/null
 fi
 
