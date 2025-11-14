@@ -9,7 +9,7 @@ test -d "$xdg_config_dir" || mkdir -p "$xdg_config_dir"
 linkitem(){
 	if [ -L "$2" ] || [ ! -e "$2" ]; then 
 		rm -f "$2"
-		ln -fs "$(realpath $1)" "$(realpath "$2")" # isnt the second realpath reduntant tho
+		ln -fs "$(realpath $1)" "$2"
 	else
 		printf "%s\n" ""$2" is a not a symbolic link, skipping..." 1>&2
 	fi
