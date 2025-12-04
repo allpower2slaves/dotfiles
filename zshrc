@@ -34,7 +34,6 @@ zstyle ':vcs_info:git:*' formats ' (%b)'
 setopt PROMPT_SUBST
 git_branch_prompt=
 
-#PS1='%n@%m %~%(?.. %F{red}[%?]%f)${vcs_info_msg_0_} %# '
 PROMPT_DIRTRIM=3
 
 shrinkpath () { # currently unused
@@ -47,12 +46,12 @@ shrinkpath () { # currently unused
   psvar[1]=$dir
 }
 
-#precmd_functions=( shrinkpath )
-#PS1='%1v%# '
-
-
-#PS1='%n@%m %2~${vcs_info_msg_0_} %# '
-PS1='%n@%m %40<'...'<%~%<<${vcs_info_msg_0_} %# '
+# PS1 setting
+if [ -n "$SSH_CONNECTION" ]; then
+  PS1='%n@%F{cyan}%m%f %40<'...'<%~%<<${vcs_info_msg_0_} %# '
+else
+  PS1='%n@%m %40<'...'<%~%<<${vcs_info_msg_0_} %# '
+fi
 
 # vi mode
 #KEYTIMEOUT=1
