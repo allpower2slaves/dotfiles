@@ -15,7 +15,13 @@ $HOME/.local/bin:\
 $HOME/bin:\
 "
 
-export EDITOR="$(command -pv nvim || command -pv vi)"
+export EDITOR="$(
+  command -v /usr/bin/nvim ||
+  command -v /usr/local/bin/nvim ||
+  command -pv nvim ||
+  command -pv vi
+  )"
+
 export VISUAL="$EDITOR"
 
 export SYSTEMD_LESS=iRXMK
