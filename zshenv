@@ -25,12 +25,3 @@ export EDITOR="$(
 export VISUAL="$EDITOR"
 
 export SYSTEMD_LESS=iRXMK
-
-# set EDITOR (deprecated)
-#printf "nvim vi" | tr ' ' '\n' | while read __editor; do
-    #if command -v "$__editor" >/dev/null 2>&1; then
-        #EDITOR="$__editor"
-        #VISUAL="$__editor"
-        #break
-    #fi
-#done
