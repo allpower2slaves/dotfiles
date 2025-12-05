@@ -47,10 +47,14 @@ shrinkpath () { # currently unused
 }
 
 # PS1 setting
+#__remote_colors=(17 10 43 26 172 14 166 130 124)
+__remote_colors=(18 55)
+__ps1_remote_color=${__remote_colors[$(( RANDOM % ${#__remote_colors[@]} + 1 ))]}
+
 if [ -n "$SSH_CONNECTION" ]; then
-  PS1='%n@%F{cyan}%m%f %40<'...'<%~%<<${vcs_info_msg_0_} %# '
+  PS1="%n@%K{${__ps1_remote_color}}%m%k %40<…<%~%<<${vcs_info_msg_0_} %# "
 else
-  PS1='%n@%m %40<'...'<%~%<<${vcs_info_msg_0_} %# '
+  PS1='%n@%m %40<…<%~%<<${vcs_info_msg_0_} %# '
 fi
 
 # vi mode
