@@ -9,7 +9,20 @@ zstyle ':completion:*' menu select
 __comp_options+=(globdots)
 zmodload -i zsh/complist
 
-#zstyle ':completion:*' file-sort modification
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect '^[' send-break 
+# Allow Tab to cycle forward even in the menu
+bindkey -M menuselect '^i' menu-complete
+bindkey -M vicmd '^i' expand-or-complete
+
+# Invert colors for the currently selected item in the menu
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*:*:*:*:at-rules' list-colors 'ma=7' # ma=7 is 'standout'
+
+zstyle ':completion:*' file-sort modification
 
 #source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -22,10 +35,17 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
+bindkey -M vicmd "k" history-beginning-search-backward-end
+bindkey -M vicmd "j" history-beginning-search-forward-end
 
 # edit in EDITOR
 autoload edit-command-line; zle -N edit-command-line
-bindkey "^[e" edit-command-line
+bindkey "^E" edit-command-line
+bindkey -M vicmd '^E' edit-command-line
+
+# other niceties
+bindkey -M vicmd 'v' visual-mode
+bindkey -M visual 'v' visual-mode # Pressing v again exits/toggles
 
 # prompt settings and functions
 autoload -Uz vcs_info
@@ -46,32 +66,43 @@ shrinkpath () { # currently unused
   psvar[1]=$dir
 }
 
-# PS1 setting
-#__remote_colors=(17 10 43 26 172 14 166 130 124)
-__remote_colors=(18 55)
-__ps1_remote_color=${__remote_colors[$(( RANDOM % ${#__remote_colors[@]} + 1 ))]}
+# PS1 setting BEGIN
+export KEYTIMEOUT=1
+setopt PROMPT_SUBST
 
+# --- SSH RANDOM COLOR LOGIC ---
+# Only runs once when the shell starts
 if [ -n "$SSH_CONNECTION" ]; then
-  PS1="%n@%K{${__ps1_remote_color}}%m%k %40<…<%~%<<${vcs_info_msg_0_} %# "
+  __remote_colors=(18 55 105 161 112 208)
+  __active_ssh_color="%F{${__remote_colors[$(( RANDOM % ${#__remote_colors[@]} + 1 ))]}}"
+  __active_ssh_reset="%f"
 else
-  PS1='%n@%m %40<…<%~%<<${vcs_info_msg_0_} %# '
+  # No color for local sessions
+  __active_ssh_color=""
+  __active_ssh_reset=""
 fi
 
-# vi mode
-#KEYTIMEOUT=1
-#
-#toggle_vi_mode(){
-#if [[ $KEYMAP == vicmd || $KEYMAP == viins ]]; then
-	#bindkey -e
-    #else
-        #bindkey -v 
-#fi
-#}
-#
-#zle -N toggle_vi_mode
-#bindkey "^E" toggle_vi_mode
-#bindkey -M viins '^[ ' vi-cmd-mode
-#bindkey -M viins
+# --- THE LOGIC (Cursor & Symbol) ---
+function update_vi_prompt() {
+  if [[ $KEYMAP == "vicmd" ]]; then
+    PS1_SYMBOL="%#"
+    echo -ne '\e[2 q' 
+  else
+    PS1_SYMBOL="%#"
+    echo -ne '\e[2 q' # lol
+  fi
+  zle reset-prompt
+}
+
+zle -N zle-keymap-select update_vi_prompt
+zle -N zle-line-init update_vi_prompt
+
+# --- YOUR PS1 ---
+# Color is surgically applied only to the user@host part, and only if SSH_CONNECTION exists.
+PS1='${__active_ssh_color}%n@%m${__active_ssh_reset} %40<…<%~%<<${vcs_info_msg_0_} ${PS1_SYMBOL} '
+# PS1 setting END
+
+# PS1 setting END
 
 # cd magic 
 setopt AUTO_PUSHD                  # pushes the old directory onto the stack
