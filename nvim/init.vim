@@ -46,6 +46,8 @@ autocmd FileType tex setlocal linebreak
 autocmd FileType markdown setlocal linebreak
 autocmd FileType fstab setlocal list | setlocal nowrap
 autocmd FileType yaml,json setlocal expandtab shiftwidth=2 tabstop=2
+autocmd FileType sh,bash,zsh,fish,ksh,csh,tcsh setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+
 
 " wrapping
 set sidescroll=5
