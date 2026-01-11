@@ -3,6 +3,9 @@ autoload -Uz compinit promptinit
 compinit
 promptinit
 
+autoload -U select-word-style
+select-word-style shell
+
 # completion.... stuff
 setopt menu_complete
 zstyle ':completion:*' menu select
@@ -46,6 +49,38 @@ bindkey -M vicmd '^E' edit-command-line
 # other niceties
 bindkey -M vicmd 'v' visual-mode
 bindkey -M visual 'v' visual-mode # Pressing v again exits/toggles
+bindkey -v '^?' backward-delete-char   # Modern Backspace
+autoload -Uz select-quoted select-bracketed
+zle -N select-quoted
+zle -N select-bracketed
+
+for km in viopp vicmd visual; do
+  # Quotes
+  foreach q ( '"' "'" '`' )
+    bindkey -M $km "i$q" select-quoted
+    bindkey -M $km "a$q" select-quoted
+  end
+  # Brackets
+  foreach opener closure ( '[' ']' '(' ')' '{' '}' '<' '>' )
+    bindkey -M $km "i$opener" select-bracketed
+    bindkey -M $km "a$opener" select-bracketed
+    bindkey -M $km "i$closure" select-bracketed
+    bindkey -M $km "a$closure" select-bracketed
+  end
+done
+
+function vi-select-inner-word() {
+  read -k 1 # Consume the 'i' or 'a' from the sequence
+  zle select-in-shell-word
+}
+zle -N vi-select-inner-word
+
+# Function to select "around word" (aw)
+function vi-select-around-word() {
+  read -k 1
+  zle select-around-shell-word
+}
+zle -N vi-select-around-word
 
 # prompt settings and functions
 autoload -Uz vcs_info
