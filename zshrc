@@ -50,6 +50,19 @@ bindkey -M vicmd '^E' edit-command-line
 bindkey -M vicmd 'v' visual-mode
 bindkey -M visual 'v' visual-mode # Pressing v again exits/toggles
 bindkey -v '^?' backward-delete-char   # Modern Backspace
+bindkey -M vicmd 'u' undo
+bindkey -M vicmd '^r' redo
+# This ensures ; and , work to repeat f/t/F/T movements
+bindkey -M vicmd ';' vi-find-next-char
+bindkey -M vicmd ',' vi-find-prev-char
+bindkey -M vicmd '%' vi-match-bracket
+bindkey -M vicmd 'x' vi-delete-char
+bindkey -M vicmd 'D' vi-kill-eol
+bindkey -M vicmd 'C' vi-change-eol
+bindkey -M vicmd 'W' vi-forward-blank-word
+bindkey -M vicmd 'B' vi-backward-blank-word
+bindkey -M vicmd 'E' vi-end-of-blank-word
+
 autoload -Uz select-quoted select-bracketed
 zle -N select-quoted
 zle -N select-bracketed
