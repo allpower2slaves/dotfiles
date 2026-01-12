@@ -123,7 +123,7 @@ setopt PROMPT_SUBST
 
 # --- SSH RANDOM COLOR LOGIC ---
 # Only runs once when the shell starts
-if [ -n "$SSH_CONNECTION" ]; then
+if [ -n "$SSH_CONNECTION" ] && [ 0 -eq 1 ]; then # temporarily disabled
   __remote_colors=(18 55 105 161 112 208)
   __active_ssh_color="%F{${__remote_colors[$(( RANDOM % ${#__remote_colors[@]} + 1 ))]}}"
   __active_ssh_reset="%f"
