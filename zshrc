@@ -160,3 +160,11 @@ setopt AUTO_PUSHD                  # pushes the old directory onto the stack
 setopt PUSHD_MINUS                 # exchange the meanings of '+' and '-'
 unsetopt CDABLE_VARS                 # expand the expression (allows 'cd -2/tmp')
 zstyle ':completion:*:directory-stack' list-colors '=(#b) #([0-9]#)*( *)==95=38;5;12' 
+
+# ssh background magic
+ssh () {
+	local ssh_bg_colors=("#002b36" "#053d48") # honorable mentions: #3d1e2e
+	local ssh_bg=$ssh_bg_colors[$(( RANDOM % ${#ssh_bg_colors[@]} + 1 ))]
+	printf "\e]11;%s\a" "$ssh_bg"
+    { command ssh "$@" } always {printf "\e]111\a"}
+}
