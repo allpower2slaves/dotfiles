@@ -21,6 +21,6 @@ printf "%s " "nvim mpv" | tr ' ' '\n' | while read __src; do
 done
 
 # zsh, bash and nex/nvi
-printf "%s " "zshrc zshenv bashrc nexrc zprofile" | tr ' ' '\n' | while read __src; do
+printf "%s " "zshrc zshenv nexrc zprofile" | tr ' ' '\n' | while read __src; do
 	linkitem "$__src" ""$HOME"/".$__src""
 done
