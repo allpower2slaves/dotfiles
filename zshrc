@@ -1,16 +1,27 @@
-setopt incappendhistory
-autoload -Uz compinit promptinit
-compinit
-promptinit
+zmodload zsh/zprof
 
-autoload -U select-word-style
-select-word-style shell
+bindkey -v
+
+#REPORTTIME=10
+#TIMEFMT='%J spent %Uu %Ss (%P CPU) with a max RSS of %MKB'
+
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY_TIME
+setopt HIST_IGNORE_DUPS
+setopt HIST_REDUCE_BLANKS
+
+unsetopt AUTO_CD
+hash -r
+
+#autoload -U select-word-style
+#select-word-style shell
 
 # completion.... stuff
 setopt menu_complete
 zstyle ':completion:*' menu select
 __comp_options+=(globdots)
 zmodload -i zsh/complist
+zstyle ':completion:*' tag-order 'commands' 'builtins' 'functions' 'aliases'
 
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
@@ -112,14 +123,12 @@ function vi-select-around-word() {
 }
 zle -N vi-select-around-word
 
-# prompt settings and functions
-autoload -Uz vcs_info
-precmd() {vcs_info}
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:git:*' formats ' (%b)'
-setopt PROMPT_SUBST
-git_branch_prompt=
+autoload -Uz vcs_info
+autoload -Uz add-zsh-hook
 
-PROMPT_DIRTRIM=3
+# git prompt end
 
 shrinkpath () { # currently unused
   local split dir=${PWD/#~\//\~/}
@@ -132,39 +141,42 @@ shrinkpath () { # currently unused
 }
 
 # PS1 setting BEGIN
+
 export KEYTIMEOUT=1
 setopt PROMPT_SUBST
+bindkey -v
 
-# --- SSH RANDOM COLOR LOGIC ---
-# Only runs once when the shell starts
-if [ -n "$SSH_CONNECTION" ] && [ 0 -eq 1 ]; then # temporarily disabled
-  __remote_colors=(18 55 105 161 112 208)
-  __active_ssh_color="%F{${__remote_colors[$(( RANDOM % ${#__remote_colors[@]} + 1 ))]}}"
-  __active_ssh_reset="%f"
-else
-  # No color for local sessions
-  __active_ssh_color=""
-  __active_ssh_reset=""
-fi
+_CURSOR_BLOCK=$'%{\e[2 q%}'
 
-# --- THE LOGIC (Cursor & Symbol) ---
-function update_vi_prompt() {
-  if [[ $KEYMAP == "vicmd" ]]; then
-    PS1_SYMBOL="%#"
-    echo -ne '\e[2 q' 
-  else
-    PS1_SYMBOL="%#"
-    echo -ne '\e[2 q' # lol
-  fi
-  zle reset-prompt
+_update_git_status() {
+    local git_info
+    git_info=$(command git --no-optional-locks rev-parse --abbrev-ref HEAD 2>/dev/null)
+    
+    if [[ -n "$git_info" ]]; then
+        # If 'HEAD' is returned, we are in a detached state. Get the hash.
+        [[ "$git_info" == "HEAD" ]] && git_info=$(command git rev-parse --short HEAD 2>/dev/null)
+        GIT_STATUS="%F{242} ($git_info)%f"
+    else
+        GIT_STATUS=""
+    fi
 }
 
-zle -N zle-keymap-select update_vi_prompt
-zle -N zle-line-init update_vi_prompt
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _update_git_status
 
-# --- YOUR PS1 ---
-# Color is surgically applied only to the user@host part, and only if SSH_CONNECTION exists.
-PS1='${__active_ssh_color}%n@%m${__active_ssh_reset} %40<…<%~%<<${vcs_info_msg_0_} ${PS1_SYMBOL} '
+_initialize_completions() {
+    local zcdump="${ZDOTDIR:-$HOME}/.zcompdump"
+    autoload -Uz compinit
+    if [[ -f "$zcdump" && -n "$zcdump"(#qN.m-1) ]]; then
+        compinit -C -i -d "$zcdump"
+    else
+        compinit -i -d "$zcdump"
+        zcompile "$zcdump"
+    fi
+}
+_initialize_completions
+
+PS1="${_CURSOR_BLOCK}%n@%m %40<…<%~%<<\${GIT_STATUS} %# "
 # PS1 setting END
 
 # PS1 setting END
