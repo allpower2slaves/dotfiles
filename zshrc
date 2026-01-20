@@ -25,6 +25,16 @@ bindkey -M vicmd '^i' expand-or-complete
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*:*:*:*:at-rules' list-colors 'ma=7' # ma=7 is 'standout'
 
+#zle_highlight=(region:bg=#444444)
+if [[ "$TERM" == "linux" ]]; then # whats up with freebsd tho
+    # TTY Mode: Use standard ANSI colors (0-7)
+    # 'standout' is the TTY's best effort, or use 'bg=8' if supported
+    zle_highlight=(region:standout)
+else
+    # Foot/Graphical Mode: Use the beautiful neutral gray
+    zle_highlight=(region:bg=#444444)
+fi
+
 zstyle ':completion:*' file-sort modification
 
 #source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
