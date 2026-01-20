@@ -40,8 +40,12 @@ bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 bindkey -M viins "^[[A" history-beginning-search-backward-end
 bindkey -M viins "^[[B" history-beginning-search-forward-end
-bindkey -M vicmd "k" history-beginning-search-backward-end
-bindkey -M vicmd "j" history-beginning-search-forward-end
+#bindkey -M vicmd "k" history-beginning-search-backward-end
+#bindkey -M vicmd "j" history-beginning-search-forward-end
+bindkey -M vicmd 'j' down-line
+bindkey -M vicmd 'k' up-line
+bindkey -M vicmd 'J' history-beginning-search-forward
+bindkey -M vicmd 'K' history-beginning-search-backward
 
 # edit in EDITOR
 autoload edit-command-line; zle -N edit-command-line
